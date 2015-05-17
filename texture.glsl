@@ -1,8 +1,8 @@
-const float gamma = 2.2;
+#pragma glslify: gamma = require('./in')
 
 vec4 texture(sampler2D tex, vec2 uv) {
   vec4 color = texture2D(tex, uv);
-  return vec4(pow(color.rgb, vec3(gamma)), color.a);
+  return gamma(color);
 }
 
 #pragma glslify: export(texture)
