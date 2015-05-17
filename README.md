@@ -5,18 +5,17 @@
 Convenience utilities for working in linear space when dealing with sRGB textures.
 
 ```glsl
-#pragma glslify: texture = require('glsl-gamma/texture')
-#pragma glslify: toGamma = require('glsl-gamma/out')
+#pragma glslify: toLinear = require('glsl-gamma/in')
+#pragma glslify: toGamma  = require('glsl-gamma/out')
 
 void main() {
-  //sample to linear space
-  vec4 color = texture(uTexture, vUv);
+  //sample into linear space
+  vec4 color = toLinear(texture2D(uTexture, vUv));
 
   //do linear space transforms on RGB...
 
   //output to sRGB color buffer
-  gl_FragColor.rgb = toGamma(color.rgb);
-  gl_FragColor.a = color.a;
+  gl_FragColor = toGamma(color);
 }
 ```
 
@@ -37,11 +36,6 @@ This is also the default export of `glsl-gamma`.
 ##### `genType = toGamma(genType color)`
 
 Takes a linear value and return its gamma-corrected (sRGB) form. For `vec4`, the alpha component is left unchanged.
-
-#### `texture = require('glsl-gamma/texture')`
-##### `vec4 color = texture(sampler2D uTex, vec2 vUv)`
-
-Samples from the given texture and gamma-corrects the sRGB values to linear form. The alpha component is left unchanged.
 
 ## License
 
