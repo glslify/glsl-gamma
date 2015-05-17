@@ -29,19 +29,19 @@ Currently all gamma operates on a `2.2` constant.
 #### `toLinear = require('glsl-gamma/in')`
 ##### `genType = toLinear(genType color)`
 
-Take a sRGB value and return its linear form.
+Take a sRGB value and return its linear form. For `vec4`, the alpha component is left unchanged.
 
 This is also the default export of `glsl-gamma`.
 
 #### `toGamma = require('glsl-gamma/out')`
 ##### `genType = toGamma(genType color)`
 
-Takes a linear value and return its gamma-corrected (sRGB) form.
+Takes a linear value and return its gamma-corrected (sRGB) form. For `vec4`, the alpha component is left unchanged.
 
 #### `texture = require('glsl-gamma/texture')`
 ##### `vec4 color = texture(sampler2D uTex, vec2 vUv)`
 
-Samples from the given texture and gamma-corrects the sRGB values to linear form.
+Samples from the given texture and gamma-corrects the sRGB values to linear form. The alpha component is left unchanged.
 
 ## License
 

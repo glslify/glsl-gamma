@@ -13,7 +13,7 @@ vec3 toGamma(vec3 v) {
 }
 
 vec4 toGamma(vec4 v) {
-  return pow(v, vec4(1.0 / gamma));
+  return vec4(toGamma(v.rgb), v.a);
 }
 
 #pragma glslify: export(toGamma)

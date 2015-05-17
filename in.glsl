@@ -12,8 +12,8 @@ vec3 toLinear(vec3 v) {
   return pow(v, vec3(gamma));
 }
 
-vec3 toLinear(vec4 v) {
-  return pow(v, vec4(gamma));
+vec4 toLinear(vec4 v) {
+  return vec4(toLinear(v.rgb), v.a);
 }
 
 #pragma glslify: export(toLinear)
