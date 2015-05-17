@@ -1,0 +1,26 @@
+{
+  "name": "glsl-gamma",
+  "version": "1.0.0",
+  "description": "gamma-to-linear convenience utilities",
+  "main": "in.js",
+  "license": "MIT",
+  "scripts": {},
+  "author": {
+    "name": "Matt DesLauriers",
+    "email": "dave.des@gmail.com",
+    "url": "http://github.com/mattdesl"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stackgl/glsl-gamma.git"
+  },
+  "keywords": [
+    "ecosystem:stackgl"
+  ],
+  "homepage": "https://github.com/stackgl/glsl-gamma",
+  "bugs": {
+    "url": "https://github.com/stackgl/glsl-gamma/issues"
+  }
+}
